@@ -6,31 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" href = style.css> 
+    <script>
+      var arr = [1,1,1,3,2,4,5,12,1,33,1,34,5,6,1,2,3,67,8];
+      var temp = arr;
+      var cards = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
+      function initialize(){
+         pair1;
+         pair2;
+         pair3;
+         pair4;
+         pair5;
+         pair6;
+         pair7;
+         pair8 = Math.random()* 8;
+      }
+      function reveal(elem){
+         elem.innerHTML = "1";
+
+
+      }
+      function randomize(){
+      
+      } 
+      function checkArr(){
+         var arr2 = arr.sort();
+      }
+      function sort(arrayS){
+        // arrayS.sort();
+        test.innerHTML = "";
+         var low;
+         var temp;
+         var hold;
+         for (var i = 0; i<= arrayS.length - 1; i++){
+            low = arrayS[i];
+            for(var j = i +1 ; j<= arrayS.length - 1; j++){
+               hold = arrayS[j];
+               if(hold < low){
+                  temp = low;
+                  arrayS[i] = hold;
+                  arrayS[j] = low;
+                  low = arrayS[i];
+               }
+            }
+                  }
+                  addArr(arrayS, test);
+
+                  
+
+      } 
+      function isStrictlyIncreasing(digitList){
+        var increase = true;
+        if(digitList.length > 1) {
+            for (var i = 0; i <= digitList.length - 2; i++) {
+                if (digitList.get(i + 1) <= digitList.get(i)) {
+                    increase = false;
+                }
+            }
+        } else if (digitList.length == 1) {
+            return true;
+        }
+        return increase;
+    }
+    function random(){
+      for (var i = 0; i <= 7; i++){
+         test.innerHTML += arr[i] + ", " ;
+      }
+    }
+    function addArr(arrS, elem){
+      for(var i = 0; i <= arrS.length - 1; i ++){
+                     elem.innerHTML += arrS[i] + ", ";
+                  }
+    }
+    function initialTest(){
+      arr = temp;
+      test.innerHTML = "";
+      addArr(temp, test);
+    }
+    function randomSelect(arrs){
+      var len = 16;
+      var arr2 = [];
+      for (var i = 0; i<= 16 - 1; i ++){
+         var ran = parseInt(Math.random()*len);
+         arr2.push(arrs[ran]);
+         arrs.spl
+         len += -1;
+         
+         
+      }
+      addArr(arr2, test);
+    }
+
+    </script>
 </head>
-<body>
-    <h1>Card Matching</h1>
-    <h3>Match the cards to win the game!</h3>
+<body onload = "initialize();">
+    <h1 id = "title">Card Matching</h1>
+    <h3 id = "rules">Match the cards to win the game!</h3>
+    <h3 id = "test"></h3>
             <div id = "grid2">
         <div class = "cell" id = "empty">
            <div id = "box0"></div> 
                        
         </div>
-        <div class = "cell" id = "black">
-            <button id = "box1">Helloo</button> 
+        <button class = "cell" id = "black" onclick = "reveal(box1);">
+            <div id = "box1"></div> 
                         
-         </div>
-         <div class = "cell" id = "black">
-            <button id = "box2"></button> 
+        </button>
+         <button class = "cell" id = "black" onclick = "reveal(box2);">
+            <div id = "box2"></div> 
                         
-         </div>
-         <div class = "cell" id = "black">
-            <button id = "box3"></button> 
+         </button>
+         <button class = "cell" id = "black" onclick = "reveal(box3);">
+            <div id = "box3"></div> 
                         
-         </div>
-         <div class = "cell" id = "black">
-            <button id = "box4"></button> 
+         </button>
+         <button class = "cell" id = "black" onclick = "reveal(box4);">
+            <div id = "box4"></div> 
                         
-         </div>
+         </button>
          <div class = "cell" id = "empty">
             <div id = "box0"></div> 
                         
@@ -39,22 +131,22 @@
             <div id = "box0"></div> 
                         
          </div>
-         <div class = "cell" id = "black">
-             <button id = "box1"></button> 
+         <button class = "cell" id = "black" onclick = "reveal(box5);">
+             <div id = "box5"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box2"></button> 
+         </button>
+          <button class = "cell" id = "black" onclick = "reveal(box6);">
+             <div id = "box6"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box3"></button> 
+          </button>
+          <button class = "cell" id = "black" onclick = "reveal(box7);">
+             <div id = "box7"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box4"></button> 
+          </button>
+          <button class = "cell" id = "black" onclick = "reveal(box8);">
+             <div id = "box8"></div> 
                          
-          </div>
+          </button>
           <div class = "cell" id = "empty">
              <div id = "box0"></div> 
                          
@@ -63,22 +155,22 @@
             <div id = "box0"></div> 
                         
          </div>
-         <div class = "cell" id = "black">
-             <button id = "box1"></button> 
+         <button class = "cell" id = "black" onclick = "reveal(box9);">
+             <div id = "box9"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box2"></button> 
+         </button>
+          <button class = "cell" id = "black" onclick = "reveal(box10);">
+             <div id = "box10"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box3"></button> 
+          </button>
+          <button class = "cell" id = "black" onclick = "reveal(box11);">
+             <div id = "box11"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box4"></button> 
+          </button>
+          <button class = "cell" id = "black" onclick = "reveal(box12);">
+             <div id = "box12"></div> 
                          
-          </div>
+          </button>
           <div class = "cell" id = "empty">
              <div id = "box0"></div> 
                          
@@ -87,27 +179,27 @@
             <div id = "box0"></div> 
                         
          </div>
-         <div class = "cell" id = "black">
-             <button id = "box1"></button> 
+         <button class = "cell" id = "black" onclick = "reveal(box13);">
+             <div id = "box13"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box2"></button> 
+         </button>
+          <button class = "cell" id = "black" onclick = "randomSelect(cards);">
+             <div id = "box14"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box3"></button> 
+          </button>
+          <button class = "cell" id = "black" onclick = "initialTest();">
+             <div id = "box15"></div> 
                          
-          </div>
-          <div class = "cell" id = "black">
-             <button id = "box4"></button> 
+          </button>
+          <button class = "cell" id = "black" onclick = "sort(arr);">
+             <div id = "box16"></div> 
                          
-          </div>
+          </button>
           <div class = "cell" id = "empty">
              <div id = "box0"></div> 
                          
           </div>
-
+   
 
          
     </div>
